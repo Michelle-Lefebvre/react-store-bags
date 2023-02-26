@@ -2,8 +2,8 @@ import {
   MessageText,
   PromotionsContainer,
 } from "../../styles/promotionsStyles";
-import { useState, useEffect } from "react";
-import { Box, Slide, Typography } from "@mui/material";
+import { useState, useEffect, useRef } from "react";
+import { Box, Slide } from "@mui/material";
 
 const messages = [
   "20% off on your first order!",
@@ -14,6 +14,8 @@ const messages = [
 export default function Promotions() {
   const [messageIndex, setMessageIndex] = useState(0);
   const [show, setShow] = useState(true);
+  //   if the text is visible outside of the container useRef() will stop it
+  const containerRef = useRef();
 
   useEffect(() => {
     setTimeout(() => {
@@ -35,8 +37,13 @@ export default function Promotions() {
   }, []);
 
   return (
-    <PromotionsContainer>
-      <Slide direction={show ? "left" : "right"} in={show}>
+    <PromotionsContainer ref={containerRef}>
+      <Slide
+        constinare={containerRef.current}
+        direction={show ? "left" : "right"}
+        in={show}
+        timeout={{ enter: 600, exit: 200 }}
+      >
         <Box display={"flex"} justifyContent="center" alignItems={"center"}>
           <MessageText>{messages[messageIndex]}</MessageText>
         </Box>

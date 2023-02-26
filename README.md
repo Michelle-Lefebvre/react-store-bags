@@ -68,3 +68,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+Referencing:
+Material UI bag project by Grepsoft
+Project
+https://www.youtube.com/watch?v=MgKaxe9euI4&t=400s
+Add pagination
+https://www.youtube.com/watch?v=37xPlDBaA4A
+Add cart functionality
+https://www.youtube.com/watch?v=xlYg93NKQPk

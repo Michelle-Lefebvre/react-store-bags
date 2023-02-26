@@ -15,7 +15,7 @@ export const PromotionsContainer = styled(Box)(({ theme }) => ({
 }));
 
 export const MessageText = styled(Typography)(({ theme }) => ({
-  color: Colors.white,
+  color: Colors.primary,
   fontFamily: '"Montez", "cursive"',
   textAlign: "center",
   fontSize: "2rem",

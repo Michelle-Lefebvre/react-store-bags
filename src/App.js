@@ -7,6 +7,7 @@ import theme from "./styles/themeStyles";
 import AppBar from "./components/appbar/AppBar";
 import Banner from "./components/banner/Banner";
 import Promotions from "./components/promotions/Promotions";
+import Products from "./components/products/Products";
 
 function App() {
   useEffect(() => {
@@ -14,14 +15,16 @@ function App() {
   }, []);
   return (
     <ThemeProvider theme={theme}>
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" style={{ marginBottom: "56px" }}>
         <AppBar />
         <Banner />
         <Promotions />
+        <Products />
         {/* 
         title
-        Products
         footer
+        searchbox
+        appdrawer
       */}
       </Container>
     </ThemeProvider>

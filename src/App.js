@@ -6,6 +6,7 @@ import theme from "./styles/themeStyles";
 
 import AppBar from "./components/appbar/AppBar";
 import Banner from "./components/banner/Banner";
+import Promotions from "./components/promotions/Promotions";
 
 function App() {
   useEffect(() => {
@@ -16,10 +17,8 @@ function App() {
       <Container maxWidth="xl">
         <AppBar />
         <Banner />
+        <Promotions />
         {/* 
-        
-        Banner
-        Promotioins
         title
         Products
         footer

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { ThemeProvider } from "@mui/material/styles";
-import { Button, Container } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { useEffect } from "react";
 import theme from "./styles/themeStyles";
 
@@ -19,6 +19,9 @@ function App() {
         <AppBar />
         <Banner />
         <Promotions />
+        <Box display={"flex"} justifyContent={"center"} sx={{ p: 4 }}>
+          <Typography variant="h4">Our Products</Typography>
+        </Box>
         <Products />
         {/* 
         title

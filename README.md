@@ -77,3 +77,6 @@ Add pagination
 https://www.youtube.com/watch?v=37xPlDBaA4A
 Add cart functionality
 https://www.youtube.com/watch?v=xlYg93NKQPk
+
+For a light/dark theme use polished
+npm install polished

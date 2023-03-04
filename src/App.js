@@ -11,6 +11,7 @@ import Products from "./components/products/Products";
 import Footer from "./components/footer/Footer";
 import AppDrawer from "./components/drawer/Drawer";
 import { UIProvider } from "./context/ui";
+import SearchBox from "./components/search/Search";
 
 function App() {
   useEffect(() => {
@@ -29,6 +30,7 @@ function App() {
           <Products />
           <Footer />
           <AppDrawer />
+          <SearchBox />
         </UIProvider>
       </Container>
     </ThemeProvider>

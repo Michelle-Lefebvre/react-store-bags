@@ -6,8 +6,11 @@ import {
 } from "../../styles/appbarStyles";
 import SearchIcon from "@mui/icons-material/Search";
 import AppbarActions from "./AppbarActions";
+import { useUIContext } from "../../context/ui";
 
 export default function AppbarDesktop({ matches }) {
+  const { setShowSearchBox } = useUIContext();
+
   return (
     <AppbarContainer>
       <AppbarHeader>My Bags</AppbarHeader>
@@ -18,7 +21,7 @@ export default function AppbarDesktop({ matches }) {
         <ListItemText primary="Contact Us" />
         <ListItemButton>
           <ListItemIcon>
-            <SearchIcon />
+            <SearchIcon onClick={() => setShowSearchBox(true)} />
           </ListItemIcon>
         </ListItemButton>
       </NavList>

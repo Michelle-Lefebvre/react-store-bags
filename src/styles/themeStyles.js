@@ -1,5 +1,5 @@
 import { createTheme } from "@mui/material/styles";
-import { darken, lighten } from "polished";
+import { lighten } from "polished";
 
 export const DrawerWidth = 250;
 
@@ -63,7 +63,7 @@ const theme = createTheme({
     MuiDrawer: {
       styleOverrides: {
         paper: {
-          width: 250,
+          width: 200,
           background: Colors.primary,
           color: Colors.secondary,
           borderRadius: "0px 100px 0px 0px",

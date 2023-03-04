@@ -10,6 +10,7 @@ import Promotions from "./components/promotions/Promotions";
 import Products from "./components/products/Products";
 import Footer from "./components/footer/Footer";
 import AppDrawer from "./components/drawer/Drawer";
+import { UIProvider } from "./context/ui";
 
 function App() {
   useEffect(() => {
@@ -18,20 +19,17 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Container maxWidth="xl" style={{ marginBottom: "56px" }}>
-        <AppBar />
-        <Banner />
-        <Promotions />
-        <Box display={"flex"} justifyContent={"center"} sx={{ p: 4 }}>
-          <Typography variant="h4">Our Products</Typography>
-        </Box>
-        <Products />
-        <Footer />
-        <AppDrawer />
-        {/* 
-        footer
-        searchbox
-        appdrawer
-      */}
+        <UIProvider>
+          <AppBar />
+          <Banner />
+          <Promotions />
+          <Box display={"flex"} justifyContent={"center"} sx={{ p: 4 }}>
+            <Typography variant="h4">Our Products</Typography>
+          </Box>
+          <Products />
+          <Footer />
+          <AppDrawer />
+        </UIProvider>
       </Container>
     </ThemeProvider>
   );

@@ -9,6 +9,7 @@ import Banner from "./components/banner/Banner";
 import Promotions from "./components/promotions/Promotions";
 import Products from "./components/products/Products";
 import Footer from "./components/footer/Footer";
+import AppDrawer from "./components/drawer/Drawer";
 
 function App() {
   useEffect(() => {
@@ -25,6 +26,7 @@ function App() {
         </Box>
         <Products />
         <Footer />
+        <AppDrawer />
         {/* 
         footer
         searchbox

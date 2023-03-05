@@ -37,6 +37,7 @@ export default function AppPagination({ setProducts }) {
       sx={{ margin: "20px 0px" }}
     >
       <Pagination
+        color="primary"
         count={Math.ceil(pagination.count / pageSize)}
         onChange={handlePageChange}
       />

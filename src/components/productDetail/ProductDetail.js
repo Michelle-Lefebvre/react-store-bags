@@ -1,19 +1,27 @@
 import {
+  Button,
   Dialog,
   DialogContent,
   DialogTitle,
   IconButton,
   Slide,
-  styled,
   Typography,
   useMediaQuery,
 } from "@mui/material";
-import { Box } from "@mui/system";
+import { Box, styled } from "@mui/system";
 import React from "react";
 import { Colors } from "../../styles/themeStyles";
 import CloseIcon from "@mui/icons-material/Close";
 import { useTheme } from "@emotion/react";
 import { Product, ProductImage } from "../../styles/productsStyles";
+import IncrementDecrement from "../increment/IncrementUI";
+import {
+  Facebook,
+  Favorite,
+  Instagram,
+  Send,
+  Twitter,
+} from "@mui/icons-material";
 
 function SlideTransistion(props) {
   return <Slide direction="down" {...props} />;
@@ -68,6 +76,28 @@ export default function ProductDetail({ open, onClose, product }) {
               {product.name}
             </Typography>
             <Typography variant="body">{product.description}</Typography>
+            <Box
+              sx={{ mt: 4 }}
+              display="flex"
+              alignItems="center"
+              justifyContent="space-between"
+            >
+              <IncrementDecrement />
+              <Button variant="contained">Add to cart</Button>
+            </Box>
+            <Box
+              display="flex"
+              alignItems="center"
+              sx={{ mt: 4, color: Colors.light }}
+            >
+              <Favorite sx={{ mr: 2 }} />
+              Add to WishList
+            </Box>
+            <Box sx={{ mt: 4, color: Colors.light }}>
+              <Facebook />
+              <Twitter sx={{ pl: theme.spacing(4) }} />
+              <Instagram sx={{ pl: theme.spacing(4) }} />
+            </Box>
           </ProductDetailInfoWrapper>
         </ProductDetailWrapper>
       </DialogContent>

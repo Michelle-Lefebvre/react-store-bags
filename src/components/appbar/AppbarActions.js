@@ -1,4 +1,4 @@
-import { Divider, ListItemButton, ListItemIcon } from "@mui/material";
+import { Badge, Divider, ListItemButton, ListItemIcon } from "@mui/material";
 import {
   NavList,
   ActionsIconsContainerDesktop,
@@ -8,8 +8,11 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import PersonIcon from "@mui/icons-material/Person";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { Colors } from "../../styles/themeStyles";
+import { useUIContext } from "../../context/uiContext";
 
 export default function AppbarActions({ matches }) {
+  const { cart, setShowCart } = useUIContext();
+
   const Component = matches
     ? ActionIconsContainerMobile
     : ActionsIconsContainerDesktop;
@@ -29,7 +32,9 @@ export default function AppbarActions({ matches }) {
               color: matches && Colors.secondary,
             }}
           >
-            <ShoppingCartIcon />
+            <Badge badgeContent={cart && cart.length} color="secondary">
+              <ShoppingCartIcon onClick={() => setShowCart(true)} />
+            </Badge>
           </ListItemIcon>
         </ListItemButton>
         <Divider orientation="vertical" flexItem />

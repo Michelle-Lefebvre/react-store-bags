@@ -15,10 +15,12 @@ import FitScreenIcon from "@mui/icons-material/FitScreen";
 import { useState } from "react";
 import useDialogModal from "../../hooks/useDialogModal";
 import ProductDetail from "../productDetail/ProductDetail";
+import useCart from "../../hooks/useCart";
 
 export default function SingleProductDesktop({ product, matches }) {
   const [showOptions, setShowOptions] = useState(false);
 
+  const { addToCart, addToCartText } = useCart(product);
   const [ProductDetailDialog, showProductDetailDialog, closeProductDialog] =
     useDialogModal(ProductDetail);
 
@@ -38,8 +40,12 @@ export default function SingleProductDesktop({ product, matches }) {
         </ProductFavButton>
 
         {showOptions && (
-          <ProductAddToCart show={showOptions} variant="contained">
-            Add to Cart
+          <ProductAddToCart
+            show={showOptions}
+            variant="contained"
+            onClick={addToCart}
+          >
+            {addToCartText}
           </ProductAddToCart>
         )}
 

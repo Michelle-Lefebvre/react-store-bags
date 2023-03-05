@@ -6,7 +6,7 @@ import {
 } from "../../styles/appbarStyles";
 import SearchIcon from "@mui/icons-material/Search";
 import AppbarActions from "./AppbarActions";
-import { useUIContext } from "../../context/ui";
+import { useUIContext } from "../../context/uiContext";
 
 export default function AppbarDesktop({ matches }) {
   const { setShowSearchBox } = useUIContext();

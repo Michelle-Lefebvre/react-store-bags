@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/system";
 import React from "react";
-import { useUIContext } from "../../context/ui";
+import { useUIContext } from "../../context/uiContext";
 import { DrawerCloseButton } from "../../styles/appbarStyles";
 
 const MiddleDivider = styled((props) => (

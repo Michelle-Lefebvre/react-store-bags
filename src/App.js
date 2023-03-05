@@ -10,7 +10,7 @@ import Promotions from "./components/promotions/Promotions";
 import Products from "./components/products/Products";
 import Footer from "./components/footer/Footer";
 import AppDrawer from "./components/drawer/Drawer";
-import { UIProvider } from "./context/ui";
+import { UIProvider } from "./context/uiContext";
 import SearchBox from "./components/search/Search";
 
 function App() {

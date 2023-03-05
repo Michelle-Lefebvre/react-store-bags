@@ -3,7 +3,7 @@ import { AppbarContainer, AppbarHeader } from "../../styles/appbarStyles";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import AppbarActions from "./AppbarActions";
-import { useUIContext } from "../../context/ui";
+import { useUIContext } from "../../context/uiContext";
 
 export default function AppbarMobile({ matches }) {
   const { setDrawerOpen, setShowSearchBox } = useUIContext();

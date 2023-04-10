@@ -14,11 +14,14 @@ import FitScreenIcon from "@mui/icons-material/FitScreen";
 import useDialogModal from "../../hooks/useDialogModal";
 import ProductDetail from "../productDetail/ProductDetail";
 import { useState } from "react";
+import useCart from "../../hooks/useCart";
 
 export default function SingleProduct({ product, matches }) {
   // eslint-disable-next-line no-unused-vars
   const [ProductDetailDialog, showProductDetailDialog, closeProductDialog] =
     useDialogModal(ProductDetail);
+
+  const { addToCart, addToCartText } = useCart(product);
 
   // eslint-disable-next-line no-unused-vars
   const [showOptions, setShowOptions] = useState(false);
@@ -49,7 +52,9 @@ export default function SingleProduct({ product, matches }) {
           </Stack>
         </ProductActionWrapper>
       </Product>
-      <ProductAddToCart variant="contained">Add to cart</ProductAddToCart>
+      <ProductAddToCart variant="contained" onClick={addToCart}>
+        {addToCartText}
+      </ProductAddToCart>
       <ProductDetailDialog product={product} />
     </>
   );

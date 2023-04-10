@@ -6,6 +6,7 @@ import {
   Typography,
   Divider,
   Paper,
+  Button,
 } from "@mui/material";
 import { useUIContext } from "../../context/uiContext";
 import { Colors } from "../../styles/themeStyles";
@@ -26,15 +27,20 @@ export default function Cart() {
         justifyContent={"space-between"}
       >
         <Avatar src={item.image} sx={{ width: 96, height: 96, mr: 2 }} />
-        <Box display={"flex"} flexDirection={"column"}>
+        <Box display="flex" flexDirection={"column"}>
           <Typography variant="h6">{item.name}</Typography>
-          <Typography variant="subtitle2">{item.description}</Typography>
+          {!matches && (
+            <Typography variant="subtitle2">{item.description}</Typography>
+          )}{" "}
         </Box>
         <Typography variant="body1" justifyContent={"end"}>
           ${item.price}
         </Typography>
-        <Divider variant="inset" />
       </Box>
+      {matches && (
+        <Typography variant="subtitle2">{item.description}</Typography>
+      )}
+      <Divider variant="inset" />
     </Box>
   ));
   return (
@@ -43,34 +49,63 @@ export default function Cart() {
       onClose={() => setShowCart(false)}
       anchor="right"
       PaperProps={{
-        sx: { width: 500, background: Colors.light_gray, borderRadius: 0 },
+        sx: {
+          width: matches ? "100%" : 500,
+          background: Colors.light_gray,
+          borderRadius: 0,
+        },
       }}
     >
-      <Box
-        sx={{ p: 4 }}
-        display="flex"
-        justifyContent={"center"}
-        flexDirection="column"
-        alignItems="center"
-      >
-        <Typography variant="h3" color={Colors.black}>
-          Cart
-        </Typography>
-        <Typography variant="body1" color={Colors.muted}>
-          Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo
-          tempor incididunt ut labore et dolore magna
-        </Typography>
-        <Paper
-          elevation={0}
-          sx={{
-            mt: 2,
-            width: "90%",
-            padding: 4,
-          }}
+      {cart.length > 0 ? (
+        <Box
+          sx={{ p: 4 }}
+          display="flex"
+          justifyContent={"center"}
+          flexDirection="column"
+          alignItems="center"
         >
-          {cartContent}
-        </Paper>
-      </Box>
+          <Typography variant="h3" color={Colors.black}>
+            Your Cart
+          </Typography>
+          <Typography variant="body1" color={Colors.muted}>
+            {" "}
+            Torem ipsum dolor sit amet, consectetur adipisicing elitsed do
+            eiusmo tempor incididunt ut labore et dolore magna
+          </Typography>
+          <Paper
+            elevation={0}
+            sx={{
+              mt: 2,
+              width: "90%",
+              padding: 4,
+            }}
+          >
+            {cartContent}
+          </Paper>
+          <Button
+            sx={{ mt: 4 }}
+            variant="contained"
+            display="flex"
+            justifyContent={"center"}
+            alignItems="center"
+          >
+            Proceed to payment
+          </Button>
+        </Box>
+      ) : (
+        <Box
+          sx={{ padding: 4 }}
+          variant="contained"
+          display="flex"
+          justifyContent={"center"}
+          alignItems="center"
+        >
+          <Typography variant={matches ? "h5" : "h4"} color={Colors.black}>
+            Your cart is empty!
+          </Typography>
+        </Box>
+      )}
+      {matches && <Button onClick={() => setShowCart(false)}>Close</Button>}
     </Drawer>
   );
 }
